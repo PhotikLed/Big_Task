@@ -17,6 +17,9 @@ class MapApp:
         self.layer = 'map'
         self.update_map()
 
+    # def req(self):
+    #     pass
+
     def update_map(self):
         ll = ','.join(map(str, (self.long, self.lat)))
         bytes_image = get_static(l=self.layer, ll=ll, z=self.z, size='650,450')
