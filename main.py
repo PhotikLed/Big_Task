@@ -8,6 +8,7 @@ class MapApp:
     def __init__(self, size):
         pg.init()
         self.DELTA = 0.01
+        self.MAX_Z = 17
         self.screen = pg.display.set_mode(size)
         self.running = True
         self.map = None
@@ -55,4 +56,3 @@ class MapApp:
 size = 650, 450
 app = MapApp(size)
 app.run()
-
