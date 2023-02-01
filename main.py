@@ -1,7 +1,5 @@
 import pygame as pg
-import requests
-
-from yandex_api import get_static
+from yandex_api_library import get_static, geocode, get_coord_toponym
 from io import BytesIO
 
 
@@ -11,15 +9,10 @@ class MapApp:
         self.screen = pg.display.set_mode(size)
         self.running = True
         self.map = None
-        self.l = 'map'
-        self.ll = '60.152500, 55.149571'
         self.update_map()
 
-    # def request(self):
-    #     response = requests.get
-
     def update_map(self):
-        bytes_image = get_static(l=self.l, ll=self.ll, z=15, size='650, 450')
+        bytes_image = get_static(l='map', ll='60.152994,55.152774', z=15, size='650,450')
         self.map = pg.image.load(BytesIO(bytes_image))
 
     def run(self):
