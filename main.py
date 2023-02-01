@@ -11,6 +11,9 @@ class MapApp:
         self.map = None
         self.update_map()
 
+    # def req(self):
+    #     pass
+
     def update_map(self):
         bytes_image = get_static(l='map', ll='60.152994,55.152774', z=15, size='650,450')
         self.map = pg.image.load(BytesIO(bytes_image))
